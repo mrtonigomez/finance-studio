@@ -14,10 +14,14 @@ spring:
           uri: lb://msvc-auth   # nombre del servicio en el discovery
           predicates:
               - Path=/api/auth/**
-        - id: user
+        - id: msvc-user
           uri: lb://msvc-user
           predicates:
             - Path=/api/users/**
+        - id: msvc-financial
+          uri: lb://msvc-financial
+          predicates:
+            - Path=/api/financial/**
 jwt:
   secret: H5f9K3v2R8wL1Zx6Q0yT4pD7sV9uC2xMbhSDAAksdsao983sadasd3saasdasdQQWESDsdasdas
   expiration: 86400
