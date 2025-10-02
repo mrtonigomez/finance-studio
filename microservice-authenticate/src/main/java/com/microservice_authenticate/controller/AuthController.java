@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/login")
 public class AuthController {
     private final JwtService jwtService;
     private final AuthenticationService authenticationService;
@@ -22,13 +22,7 @@ public class AuthController {
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<UserPostDto> register(@RequestBody RegisterUserDto registerUserDto) {
-
-        return authenticationService.signup(registerUserDto);
-    }
-
-    @PostMapping("/login")
+    @PostMapping
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         UserGetDto authenticatedUser = authenticationService.authenticate(loginUserDto);
 
