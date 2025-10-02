@@ -29,6 +29,8 @@ public class Transaction {
     @Column(nullable = false)
     private Float quantity;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
     private Category category;
 
     private String notes;
