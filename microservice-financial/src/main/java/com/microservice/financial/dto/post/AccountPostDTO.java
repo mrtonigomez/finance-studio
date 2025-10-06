@@ -7,7 +7,7 @@ import lombok.Data;
 public class AccountPostDTO {
     private Long id;
     private String name;
-    private String balance;
+    private Float balance;
     private AccountType type;
     private Long userId;
 }

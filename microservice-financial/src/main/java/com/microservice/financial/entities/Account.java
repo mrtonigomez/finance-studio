@@ -21,9 +21,10 @@ public class Account {
     private Long id;
 
     @Column(nullable = false)
-    private String balance;
+    private Float balance;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private AccountType type;
 
     @Column(nullable = false)
